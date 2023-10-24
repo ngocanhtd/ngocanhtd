@@ -98,6 +98,7 @@ header .nav_hd {
 	z-index: 98;
 	text-align: center;
 	padding-top: 50px;
+	color:red
 }
 header .ttl {
 	padding: 0 10vw 5vw;
