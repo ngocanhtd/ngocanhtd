@@ -85,11 +85,11 @@ header .ttl1 {
 header .nav_hd a {
 	display: block;
 	font-size: 1.1em;
-	margin: 16px 0 0 11px;
+	width: 100%;
 }
 header .nav_hd {
 	display: none;
-	position: fixed;
+	position: fixed;flex-wrap: wrap;
 	top: 0;
 	left: 0;
 	background-color: #000;
