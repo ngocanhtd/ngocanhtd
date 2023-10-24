@@ -87,9 +87,14 @@ header .nav_hd a {
 	font-size: 1.1em;
 	width: 100%;
 }
+header .nav_hd nav{
+	display: flex;
+	flex-wrap: wrap;
+	height: 100%;
+}
 header .nav_hd {
 	display: none;
-	position: fixed;flex-wrap: wrap;
+	position: fixed;
 	top: 0;
 	left: 0;
 	background-color: #000;
@@ -768,6 +773,7 @@ body {
 	font-size: 18px;
 	line-height: 27px;
 }
+	header .nav_hd nav{flex-wrap: nowrap;}
 header .nav_hd {
 	display: block;
 	padding: 0 10px 0 0;
@@ -794,7 +800,7 @@ header .nav_hd a {
 	margin: 0 17px 0 0;
 }
 header .nav_hd a {
-	font-size: 1em;
+	font-size: 1em;    white-space: nowrap;
 }
 header .ttl {
 	width: 903px;

@@ -47,7 +47,7 @@ $(document).ready(function () {
 	});
 	$(".nav_hd").click(function () {
 		$("body").css("overflow", "auto");
-		$(this).hide().css("display","flex");
+		$(this).hide();
 		$(".bt_menu").removeClass("on");
 	});	// hamburger js
 
