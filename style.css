@@ -1024,3 +1024,11 @@ footer {
 	padding: 0 0 69px 0;
 }
 }
+@media only screen and (max-width: 991px) and (orientation: portrait ) {
+	header .nav_hd nav {
+    align-content: start;
+}
+	header .nav_hd a {
+    padding-bottom: 8px;
+}
+}
