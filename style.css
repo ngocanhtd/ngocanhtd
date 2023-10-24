@@ -94,7 +94,7 @@ header .nav_hd {
 	left: 0;
 	background-color: #000;
 	width: 100%;
-	height: 100vh;
+	height: calc(100vh - 50px);
 	z-index: 98;
 	text-align: center;
 	padding-top: 50px;
