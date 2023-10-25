@@ -320,6 +320,7 @@ main>div {
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
+	align-items: center
 }
 #sec3 .gr {
 	display: -webkit-flex;
@@ -843,6 +844,10 @@ header .pt_g {
 #sec1 .gr {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
+}
+	#sec3 .author img {
+    width: 112px;
+    margin-right: 25px;
 }
 #sec1 .ct:last-child {
 	grid-column: 1 / 4;
