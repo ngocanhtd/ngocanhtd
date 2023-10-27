@@ -27,17 +27,28 @@ function svg1(){
 	}	// responsive
 }
 
+	function height_ct(){
+		"use strict";
+		var ct = $("#sec3 .ct1");
+	var maxHeight = mHeight(ct);
+	function mHeight(elems) {
+		return Math.max.apply(null, elems.map(function () {
+			return $(this).height();
+		}).get());
+	}
 
+	$("#sec3 .ct").height(maxHeight);
+	}
+	
+$(window).resize(height_ct);
 $(window).resize(svg1);
 $(document).ready(function () {
 	"use strict";
 	var bt_prev = $("#bt_prev")[0];
 	var bt_next = $("#bt_next")[0];
 	var z = 0;
-	var ct = $("#sec3 .ct1");
-	var maxHeight = mHeight(ct);
+	
 	var arr = [];
-	var vp = $(window).innerWidth();
 
 
 	var img = '<img src="image/companies.webp" alt="companies" width="2029" height="115">';
@@ -118,12 +129,9 @@ svg1();
 
 	
 	
-	function mHeight(elems) {
-		return Math.max.apply(null, elems.map(function () {
-			return $(this).height();
-		}).get());
-	}
-	$("#sec3 .ct").height(maxHeight);
+	
+	
+	
 	bt_prev.addEventListener("click", function prev() {
 		ct[z].classList.remove("on");
 
