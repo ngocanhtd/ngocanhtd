@@ -66,7 +66,7 @@ $(document).ready(function () {
 		}
 	}); // wow animation
 
-
+svg1();
 	$(".bt_menu").click(function () {
 		$(".nav_hd").slideToggle();
 		$(this).toggleClass("on");
