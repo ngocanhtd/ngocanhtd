@@ -76,7 +76,7 @@ $(document).ready(function () {
 			}
 		}
 	}); // wow animation
-
+height_ct();
 svg1();
 	$(".bt_menu").click(function () {
 		$(".nav_hd").slideToggle();
@@ -130,7 +130,7 @@ svg1();
 	
 	
 	
-	
+	var  ct = $("#sec3 .ct1");
 	
 	bt_prev.addEventListener("click", function prev() {
 		ct[z].classList.remove("on");
