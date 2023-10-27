@@ -1,3 +1,34 @@
+function svg1(){
+	"use strict";
+	var vp = $(window).innerWidth();
+	if (vp < 600) {
+		$("#ani5").height("120px").width("84px");
+		$("#ani6").height("257px").width("186px");
+	}
+	if (vp > 599) {
+		$("header dotlottie-player").height("239px");
+		$("#ani6").height("330px").width("249px");
+	}
+	if (vp >= 660) {
+		$("#sec4 #ani6").height("509px").width("380px");
+	}
+	if (vp > 767) {
+		$("#sec4 #ani6").height("562px").width("388px");
+		$("header dotlottie-player").height("369px");
+	}
+	if (vp > 839) {
+		$("#ani5").height("206px").width("177px");
+	}
+	if (vp > 992) {
+		$("#ani5").height("240px").width("187px");
+	}
+	if (vp > 1200) {
+		$("header dotlottie-player").height("500px");
+	}	// responsive
+}
+
+
+$(window).resize(svg1);
 $(document).ready(function () {
 	"use strict";
 	var bt_prev = $("#bt_prev")[0];
@@ -85,30 +116,6 @@ $(document).ready(function () {
 	$(window).scroll(fix_ttl);	// fixed title js
 
 
-	if (vp < 600) {
-		$("#ani5").height("120px").width("84px");
-		$("#ani6").height("257px").width("186px");
-	}
-	if (vp > 599) {
-		$("header dotlottie-player").height("239px");
-		$("#ani6").height("330px").width("249px");
-	}
-	if (vp >= 660) {
-		$("#sec4 #ani6").height("509px").width("380px");
-	}
-	if (vp > 767) {
-		$("#sec4 #ani6").height("562px").width("388px");
-		$("header dotlottie-player").height("369px");
-	}
-	if (vp > 839) {
-		$("#ani5").height("206px").width("177px");
-	}
-	if (vp > 992) {
-		$("#ani5").height("240px").width("187px");
-	}
-	if (vp > 1200) {
-		$("header dotlottie-player").height("500px");
-	}	// responsive
 	
 	
 	function mHeight(elems) {
