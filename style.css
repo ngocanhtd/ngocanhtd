@@ -249,7 +249,7 @@ main>div {
 	font-size: 1.4em;
 	padding: 2vw 0;
 }
-#sec2 .pt {
+#sec2 .pt, #sec2 dl {
 	max-width: 316px;
 }
 #sec2 .ct1 dl {
