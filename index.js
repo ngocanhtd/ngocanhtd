@@ -1,61 +1,61 @@
-function svg1(){
+var ct = $("#sec3 .ct1");
+
+
+
+function slide() {
 	"use strict";
-	var vp = $(window).innerWidth();
-	if (vp < 600) {
-		$("#ani5").height("120px").width("84px");
-		$("#ani6").height("257px").width("186px");
-	}
-	if (vp > 599) {
-		$("header dotlottie-player").height("239px");
-		$("#ani6").height("330px").width("249px");
-	}
-	if (vp >= 660) {
-		$("#sec4 #ani6").height("509px").width("380px");
-	}
-	if (vp > 767) {
-		$("#sec4 #ani6").height("562px").width("388px");
-		$("header dotlottie-player").height("369px");
-	}
-	if (vp > 839) {
-		$("#ani5").height("206px").width("177px");
-	}
-	if (vp > 992) {
-		$("#ani5").height("240px").width("187px");
-	}
-	if (vp > 1200) {
-		$("header dotlottie-player").height("500px");
-	}	// responsive
-}
-
-	function height_ct(){
-		"use strict";
-		var ct = $("#sec3 .ct1");
-	var maxHeight = mHeight(ct);
-	function mHeight(elems) {
-		return Math.max.apply(null, elems.map(function () {
-			return $(this).height();
-		}).get());
-	}
-
-	$("#sec3 .ct").height(maxHeight);
-	}
 	
-$(window).resize(height_ct);
-$(window).resize(svg1);
+	var arr = [];
+	
+	for (var i = 1; i < ct.length; i++) {
+		var w = ct.width() + 4;
+		arr.push(w);
+		var _sumwidth = arr.reduce(function getsum(total, num) {
+			return total + num;
+		}, 0);
+		ct[i].style.transform = "translateX(-" + _sumwidth + "px)";
+//		ct[i].style.left = "-" + _sumwidth + "px";
+	} 
+
+	console.log($("#sec3 .ct"));
+	//  slide #sec3 
+}
+//
+//	function height_ct(){
+//		"use strict";
+//		
+//		var ct = $("#sec3 .ct1");
+//	var maxHeight = mHeight(ct);
+//	function mHeight(elems) {
+//		return Math.max.apply(null, elems.map(function () {
+//			return $(this).height();
+//		}).get());
+//	}
+//
+//	$("#sec3 .ct").height(maxHeight);
+//	}
+
+
+
+slide();
+
+
+
+var ct = $("#sec3 .ct1");
 $(document).ready(function () {
 	"use strict";
 	var bt_prev = $("#bt_prev")[0];
 	var bt_next = $("#bt_next")[0];
 	var z = 0;
-	
-	var arr = [];
+
+
 
 
 	var img = '<img src="image/companies.webp" alt="companies" width="2029" height="115">';
-	var img5 = img.repeat(5);
-	$(".pt_scroll").append(img5);   // companies image run horizontal
-	
-	
+	var img5 = img.repeat(7);
+	$(".pt_scroll").append(img5); // companies image run horizontal
+
+
 	var inViewport = (entries) => {
 		entries.forEach(entry => {
 			entry.target.classList.toggle("is-inViewport", entry.isIntersecting);
@@ -76,8 +76,8 @@ $(document).ready(function () {
 			}
 		}
 	}); // wow animation
-height_ct();
-svg1();
+	//height_ct();
+	//	setHeight();
 	$(".bt_menu").click(function () {
 		$(".nav_hd").slideToggle();
 		$(this).toggleClass("on");
@@ -91,7 +91,7 @@ svg1();
 		$("body").css("overflow", "auto");
 		$(this).hide();
 		$(".bt_menu").removeClass("on");
-	});	// hamburger js
+	}); // hamburger js
 
 
 	function fix_ttl() {
@@ -124,14 +124,14 @@ svg1();
 		}
 	}
 	$(window).ready(fix_ttl);
-	$(window).scroll(fix_ttl);	// fixed title js
+	$(window).scroll(fix_ttl); // fixed title js
 
 
-	
-	
-	
-	var  ct = $("#sec3 .ct1");
-	
+
+
+
+
+
 	bt_prev.addEventListener("click", function prev() {
 		ct[z].classList.remove("on");
 
@@ -152,18 +152,10 @@ svg1();
 		ct[z].classList.add("on");
 	}); // button slide of section 3  
 
-	
-	for (var i = 1; i < ct.length; i++) {
 
-		var h = ct[i - 1].clientHeight;
-		arr.push(h);
-		var _sumheight = arr.reduce(function getsum(total, num) {
-			return total + num;
-		}, 0);
-		ct[i].style.transform = "translateY(-" + _sumheight + "px)";
-	} //  slide #sec3 
 
-	
+
+
 	var x, i, j, l, ll, selElmnt, a, b, c;
 	/*look for any elements with the class "custom-select":*/
 	x = document.getElementsByClassName("custom-select");
@@ -218,6 +210,7 @@ svg1();
 			this.classList.toggle("select-arrow-active");
 		});
 	}
+
 	function closeAllSelect(elmnt) {
 		/*a function that will close all select boxes in the document,
 		except the current select box:*/
@@ -239,6 +232,10 @@ svg1();
 			}
 		}
 	}
-	document.addEventListener("click", closeAllSelect);  	// css for option form
+	document.addEventListener("click", closeAllSelect); // css for option form
 
 });
+
+//$(window).resize(height_ct);
+$(window).resize(slide);
+//$(window).resize(setHeight);
