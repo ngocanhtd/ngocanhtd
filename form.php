@@ -1,7 +1,8 @@
 <html>
 <body>
 
-Thanks, we've received your details and will get in touch ASAP!
+
+Thanks <?php echo $_POST["fname"] ?>, we've received your details and will get in touch ASAP!
 
 
 </body>
