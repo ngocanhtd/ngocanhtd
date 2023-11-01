@@ -193,13 +193,14 @@
           <p class="more ani9" data-content="&#10148; Read more">&#10148;  Read more</p>
         </div>
         <div class="ct2">
-          <h3>Schedule a discovery call</h3>
-          <form method="post" action="/form.php">
-            <input type="text" placeholder="Name" name="fname" />
-            <input type="tel" id="phone" name="fphone" pattern="(+84|0)d{9,10}" placeholder="Phone" />
-            <input type="email" placeholder="Email" name="femail" />
+          <h3>Schedule a discovery call</h3> 
+
+          <form method="get" action="form.php">
+            <input type="text" placeholder="Name" name="fname" required />
+<!--            <input type="tel" id="phone" name="fphone" pattern="(+84|0)d{9,10}" placeholder="Phone" required />-->
+            <input type="email" placeholder="Email" name="femail"    required />
             <div class="custom-select">
-              <select name="cost" placeholder="Cost">
+              <select name="cost" placeholder="Cost" required>
                 <option selected>Cost</option>
                 <option value="10k">$10k</option>
                 <option value="20k">$20k</option>
@@ -210,9 +211,10 @@
             </div>
             <div class="contact">
               <p class="text">What is an RFP?</p>
-              <input type="submit" name="submit" value="&#10148; Submit" />
+              <input type="submit" value="&#10148; Submit" />
             </div>
           </form>
+		<p id="demo"></p>
         </div>
         <div class="ct3">
           <p class="phone"><img src="image/tel.svg" alt="calendar" width="37" height="37"><span class="ani9" data-content="Schedule a Call"><a href="tel:0976065619">Schedule a Call</a></span></p>
@@ -230,6 +232,44 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> 
 <script src="index.js"></script> 
 <script>
+		
+
+	$(window).ready(function(){
+		$("form").submit(function(e){
+			e.preventDefault();
+			 var form = $(this);
+				$.ajax({
+				  type: "GET",
+				  url: "form.php",
+				  data: form.serialize()
+				}).done(function(data) {
+				  document.getElementById("demo").innerHTML = data;
+				}).fail(function(data) {
+				  
+				});
+		})
+		
+	})
+	function sm(e) {
+//		e.preventDefault();
+//		var name =$("[name=fname]");
+//		
+//		
+//		console.log("fdsfsfas");
+//  const xhttp = new XMLHttpRequest();
+//		
+//  xhttp.onload = function() {
+//    document.getElementById("demo").innerHTML = xhttp.responseText;
+//  }
+//  xhttp.open("GET", "form.php");
+//  xhttp.send();
+}
+	
+	
+	
+	
+	
+	
 	var ani = ["#ani1", "#ani2", "#ani3", "#ani4"];
 	var vp = screen.availWidth;
 	var x;
@@ -283,9 +323,9 @@
 			});
 		
 	}  // lottie play once
-
-	// lottie play once
 	
+		
+		
 	</script>
 </body>
 </html>

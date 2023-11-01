@@ -1,7 +1,6 @@
 var ct = $("#sec3 .ct1");
 
 
-
 function slide() {
 	"use strict";
 	
@@ -14,27 +13,10 @@ function slide() {
 			return total + num;
 		}, 0);
 		ct[i].style.transform = "translateX(-" + _sumwidth + "px)";
-//		ct[i].style.left = "-" + _sumwidth + "px";
 	} 
 
-	console.log($("#sec3 .ct"));
 	//  slide #sec3 
 }
-//
-//	function height_ct(){
-//		"use strict";
-//		
-//		var ct = $("#sec3 .ct1");
-//	var maxHeight = mHeight(ct);
-//	function mHeight(elems) {
-//		return Math.max.apply(null, elems.map(function () {
-//			return $(this).height();
-//		}).get());
-//	}
-//
-//	$("#sec3 .ct").height(maxHeight);
-//	}
-
 
 
 slide();
@@ -76,8 +58,6 @@ $(document).ready(function () {
 			}
 		}
 	}); // wow animation
-	//height_ct();
-	//	setHeight();
 	$(".bt_menu").click(function () {
 		$(".nav_hd").slideToggle();
 		$(this).toggleClass("on");
@@ -233,9 +213,9 @@ $(document).ready(function () {
 		}
 	}
 	document.addEventListener("click", closeAllSelect); // css for option form
+	
+	
 
 });
 
-//$(window).resize(height_ct);
 $(window).resize(slide);
-//$(window).resize(setHeight);
