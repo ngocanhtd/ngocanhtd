@@ -197,7 +197,7 @@
 
           <form method="get" action="form.php">
             <input type="text" placeholder="Name" name="fname" required />
-<!--            <input type="tel" id="phone" name="fphone" pattern="(+84|0)d{9,10}" placeholder="Phone" required />-->
+            <input type="tel" id="phone" name="fphone" placeholder="Phone" pattern="(\+84|0)\d{9,10}" required />
             <input type="email" placeholder="Email" name="femail"    required />
             <div class="custom-select">
               <select name="cost" placeholder="Cost" required>
@@ -245,26 +245,24 @@
 				}).done(function(data) {
 				  document.getElementById("demo").innerHTML = data;
 				}).fail(function(data) {
-				  
+				  document.getElementById("demo").innerHTML = "Excuse me, please input the form again";
 				});
+			
+//			console.log($("#phone").val().toString());
+//			var pt=/(\+84|0)\d{9,10}/;
+//			if($("#phone").val().toString().match(pt)){
+//			   console.log("y");
+//			   } else{
+//				    console.log("n");
+//			   }
+//			
+//			
+//			
+			
 		})
 		
 	})
-	function sm(e) {
-//		e.preventDefault();
-//		var name =$("[name=fname]");
-//		
-//		
-//		console.log("fdsfsfas");
-//  const xhttp = new XMLHttpRequest();
-//		
-//  xhttp.onload = function() {
-//    document.getElementById("demo").innerHTML = xhttp.responseText;
-//  }
-//  xhttp.open("GET", "form.php");
-//  xhttp.send();
-}
-	
+
 	
 	
 	
